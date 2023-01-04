@@ -112,5 +112,14 @@ flutter:
           weight: 200
         - asset: assets\Montserrat\Montserrat-Thin.ttf
           weight: 100
+    - family: DMsans
+      fonts:
+        - asset: assets\DM_Sans\DMSans-Bold.ttf
+          weight: 800
+        - asset:  assets\DM_Sans\DMSans-Medium.ttf
+          weight: 700
+        - asset:  assets\DM_Sans\DMSans-Regular.ttf
+          weight: 600
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
