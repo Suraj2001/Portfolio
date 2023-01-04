@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/about.dart';
+import 'package:portfolio/contact.dart';
 import 'package:portfolio/home.dart';
+import 'package:portfolio/resume.dart';
+import 'package:portfolio/work.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,8 +30,14 @@ class MyApp extends StatelessWidget {
         primaryColor: Color(0xff60C689),
         secondaryHeaderColor: Color(0xffD9D9D9),
       ),
-      home: Home(),
+      home: const Home(),
       debugShowCheckedModeBanner: false,
+      routes: {
+        '/about': (context) => const About(),
+        '/work': (context) => const Work(),
+        '/resume': (context) => const Resume(),
+        '/contact': (context) => const Contact(),
+      },
     );
   }
 }
