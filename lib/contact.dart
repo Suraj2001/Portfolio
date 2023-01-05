@@ -7,12 +7,17 @@ class Contact extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ElevatedButton(
-          onPressed: (() {
-            Navigator.pop(context);
-          }),
-          child: Text("Back")),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Center(
+          child: Text("Up Soon!",
+              style: TextStyle(
+                  fontFamily: "DMmono",
+                  fontSize: 48,
+                  color: Theme.of(context).primaryColor)),
+        ),
+      ],
     );
   }
 }

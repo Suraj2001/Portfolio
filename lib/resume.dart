@@ -8,9 +8,14 @@ class Resume extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Container(
-          child: Text("Back"),
+        Center(
+          child: Text("Up Soon!",
+              style: TextStyle(
+                  fontFamily: "DMmono",
+                  fontSize: 48,
+                  color: Theme.of(context).primaryColor)),
         ),
       ],
     );
