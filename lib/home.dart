@@ -32,6 +32,7 @@ class _HomeState extends State<Home> {
         centerTitle: true,
         backgroundColor: Colors.transparent,
         toolbarHeight: 100,
+        elevation: 0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -93,7 +94,7 @@ class _HomeState extends State<Home> {
         ),
       ),
       body: Container(
-          padding: EdgeInsets.only(top: 100),
+          padding: EdgeInsets.only(top: 60),
           decoration: new BoxDecoration(
               gradient: new LinearGradient(
             begin: Alignment(0, 0.3),

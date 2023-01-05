@@ -6,6 +6,7 @@ import 'package:portfolio/resume.dart';
 import 'package:portfolio/work.dart';
 
 void main() {
+  Paint.enableDithering = true;
   runApp(const MyApp());
 }
 
@@ -26,7 +27,6 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        fontFamily: 'gotham',
         primaryColor: Color(0xff60C689),
         secondaryHeaderColor: Color(0xffD9D9D9),
       ),

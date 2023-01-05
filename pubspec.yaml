@@ -3,7 +3,7 @@ description: Developing portfolio.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -20,7 +20,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.18.4 <3.0.0'
+  sdk: ">=2.18.4 <3.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -29,10 +29,9 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  rive: ^0.9.0
+  # inner_shadow_widget: ^0.0.3
   flutter:
     sdk: flutter
-
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -54,7 +53,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -94,31 +92,22 @@ flutter:
           weight: 400
         - asset: assets\Myraid\MYRIADPRO-REGULAR.OTF
           weight: 500
-    - family: Montserrat
+    - family: DMmono
       fonts:
-        - asset: assets\Montserrat\Montserrat-Black.ttf
-          weight: 800
-        - asset: assets\Montserrat\Montserrat-Bold.ttf
-          weight: 700
-        - asset: assets\Montserrat\Montserrat-SemiBold.ttf
-          weight: 600
-        - asset: assets\Montserrat\Montserrat-Medium.ttf
+        - asset: assets\DMMono\DMMono-Medium.ttf
           weight: 500
-        - asset: assets\Montserrat\Montserrat-Regular.ttf
+        - asset: assets\DMMono\DMMono-Regular.ttf
           weight: 400
-        - asset: assets\Montserrat\Montserrat-Light.ttf
+        - asset: assets\DMMono\DMMono-Light.ttf
           weight: 300
-        - asset: assets\Montserrat\Montserrat-ExtraLight.ttf
-          weight: 200
-        - asset: assets\Montserrat\Montserrat-Thin.ttf
-          weight: 100
+
     - family: DMsans
       fonts:
         - asset: assets\DM_Sans\DMSans-Bold.ttf
           weight: 800
-        - asset:  assets\DM_Sans\DMSans-Medium.ttf
+        - asset: assets\DM_Sans\DMSans-Medium.ttf
           weight: 700
-        - asset:  assets\DM_Sans\DMSans-Regular.ttf
+        - asset: assets\DM_Sans\DMSans-Regular.ttf
           weight: 600
 
   # For details regarding fonts from package dependencies,
