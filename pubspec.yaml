@@ -80,6 +80,8 @@ flutter:
           weight: 800
         - asset: assets/GothamBold.ttf
           weight: 600
+        - asset: assets/GothamBook.ttf
+          weight: 500
     - family: Myraid
       fonts:
         - asset: assets\Myraid\MYRIADPRO-BOLD.OTF

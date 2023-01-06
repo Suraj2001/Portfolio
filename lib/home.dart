@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:portfolio/about.dart';
 import 'package:portfolio/contact.dart';
@@ -30,7 +28,7 @@ class _HomeState extends State<Home> {
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black,
         toolbarHeight: 100,
         elevation: 0,
         title: Row(
@@ -97,10 +95,10 @@ class _HomeState extends State<Home> {
           padding: EdgeInsets.only(top: 60),
           decoration: new BoxDecoration(
               gradient: new LinearGradient(
-            begin: Alignment(0, 0.3),
-            end: Alignment(-0.2, -1),
+            begin: Alignment(0, 1),
+            end: Alignment(0, 0),
             colors: [
-              Color(0xffD9D9D9).withOpacity(0.15),
+              Color(0xffD9D9D9).withOpacity(0.10),
               Color(0xffD9D9D9).withOpacity(0),
             ],
           )),
