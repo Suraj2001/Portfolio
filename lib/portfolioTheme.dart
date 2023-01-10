@@ -27,4 +27,7 @@ class PortfolioTheme {
 
   static TextStyle date = const TextStyle(
       color: Colors.white54, fontSize: 10, fontFamily: "DMsans");
+
+  static TextStyle highlightText =
+      const TextStyle(fontFamily: "DMsans", fontSize: 20, color: kPrimaryColor);
 }

@@ -4,10 +4,19 @@ import 'package:portfolio/contact.dart';
 import 'package:portfolio/home.dart';
 import 'package:portfolio/resume.dart';
 import 'package:portfolio/work.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   Paint.enableDithering = true;
   runApp(const MyApp());
+}
+
+launchURL(url) async {
+  if (await canLaunchUrl(Uri.parse(url))) {
+    await launchUrl(Uri.parse(url));
+  } else {
+    throw 'Could not launch $url';
+  }
 }
 
 class MyApp extends StatelessWidget {
@@ -32,12 +41,6 @@ class MyApp extends StatelessWidget {
       ),
       home: const Home(),
       debugShowCheckedModeBanner: false,
-      routes: {
-        '/about': (context) => const About(),
-        '/work': (context) => const Work(),
-        '/resume': (context) => const Resume(),
-        '/contact': (context) => const Contact(),
-      },
     );
   }
 }

@@ -1,11 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:portfolio/home.dart';
+import 'package:portfolio/main.dart';
 import 'package:portfolio/portfolioTheme.dart';
 
-class Resume extends StatelessWidget {
-  const Resume({super.key});
+class Resume extends StatefulWidget {
+  final Function(int) onTap;
+  const Resume({super.key, required this.onTap});
 
+  @override
+  State<Resume> createState() => _ResumeState();
+}
+
+class _ResumeState extends State<Resume> {
   @override
   Widget build(BuildContext context) {
     List<Widget> languages = [
@@ -110,10 +116,7 @@ class Resume extends StatelessWidget {
                       const SizedBox(height: 4),
                       Text(
                         "Graduate Student @ CSULB",
-                        style: TextStyle(
-                            fontFamily: "DMsans",
-                            fontSize: 20,
-                            color: Theme.of(context).primaryColor),
+                        style: PortfolioTheme.highlightText,
                       ),
                       const SizedBox(height: 20),
                       Text(
@@ -128,7 +131,12 @@ class Resume extends StatelessWidget {
                       Row(
                         children: [
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                currentIndex = 4;
+                              });
+                              widget.onTap(currentIndex);
+                            },
                             style: ElevatedButton.styleFrom(
                                 backgroundColor: Colors.transparent,
                                 elevation: 0,
@@ -147,14 +155,25 @@ class Resume extends StatelessWidget {
                             child: const Text("Contact Me"),
                           ),
                           const SizedBox(width: 20),
-                          Image.asset(
-                            'assets/linkedin.png',
-                            scale: 1.5,
+                          InkWell(
+                            onTap: () {
+                              launchURL(
+                                  "http://www.linkedin.com/in/surajshah2001");
+                            },
+                            child: Image.asset(
+                              'assets/linkedin.png',
+                              scale: 1.5,
+                            ),
                           ),
                           const SizedBox(width: 20),
-                          Image.asset(
-                            'assets/github.png',
-                            scale: 1.5,
+                          InkWell(
+                            onTap: () {
+                              launchURL("https://github.com/Suraj2001");
+                            },
+                            child: Image.asset(
+                              'assets/github.png',
+                              scale: 1.5,
+                            ),
                           ),
                         ],
                       ),
@@ -209,7 +228,7 @@ class Resume extends StatelessWidget {
               ],
             ),
             const SizedBox(width: 40),
-            Container(
+            SizedBox(
               width: MediaQuery.of(context).size.width * 0.55,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,

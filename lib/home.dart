@@ -2,8 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/about.dart';
 import 'package:portfolio/contact.dart';
 import 'package:portfolio/homepage.dart';
+import 'package:portfolio/portfolioTheme.dart';
 import 'package:portfolio/resume.dart';
 import 'package:portfolio/work.dart';
+
+int currentIndex = 2;
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -13,14 +16,29 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  int _currentIndex = 2;
-  final List<Widget> _children = [
-    Work(),
-    About(),
-    LandingPage(),
-    Resume(),
-    Contact(),
-  ];
+  List<Widget> _children = [];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _children = [
+      const Work(),
+      const About(),
+      LandingPage(
+        onTap: (p0) {
+          setState(() {});
+        },
+      ),
+      Resume(
+        onTap: (p0) {
+          setState(() {});
+        },
+      ),
+      const Contact(),
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,86 +55,110 @@ class _HomeState extends State<Home> {
             InkWell(
               onTap: () {
                 setState(() {
-                  _currentIndex = 0;
+                  currentIndex = 0;
                 });
               },
-              radius: 20,
+              borderRadius: BorderRadius.circular(6),
               hoverColor: Theme.of(context).primaryColor.withOpacity(0.5),
               splashColor: Colors.transparent,
-              child: textTheme("WORK"),
+              child: textTheme("WORK", currentIndex, 0),
             ),
-            SizedBox(width: 60),
+            const SizedBox(width: 60),
             InkWell(
               onTap: () {
                 setState(() {
-                  _currentIndex = 1;
+                  currentIndex = 1;
                 });
               },
+              borderRadius: BorderRadius.circular(6),
               hoverColor: Theme.of(context).primaryColor.withOpacity(0.5),
               splashColor: Colors.transparent,
-              child: textTheme("ABOUT"),
+              child: textTheme("ABOUT", currentIndex, 1),
             ),
-            SizedBox(width: 80),
+            const SizedBox(width: 80),
             InkWell(
                 onTap: () {
                   // Navigator.pushNamed(context, '/');
                   setState(() {
-                    _currentIndex = 2;
+                    currentIndex = 2;
                   });
                 },
                 splashColor: Colors.transparent,
                 child: Image.asset("assets/logo.png")),
-            SizedBox(width: 80),
+            const SizedBox(width: 80),
             InkWell(
               onTap: () {
                 setState(() {
-                  _currentIndex = 3;
+                  currentIndex = 3;
                 });
               },
+              borderRadius: BorderRadius.circular(6),
               hoverColor: Theme.of(context).primaryColor.withOpacity(0.5),
               splashColor: Colors.transparent,
-              child: textTheme("RESUME"),
+              child: textTheme("RESUME", currentIndex, 3),
             ),
-            SizedBox(width: 60),
+            const SizedBox(width: 60),
             InkWell(
               onTap: () {
                 setState(() {
-                  _currentIndex = 4;
+                  currentIndex = 4;
                 });
               },
+              borderRadius: BorderRadius.circular(6),
               hoverColor: Theme.of(context).primaryColor.withOpacity(0.5),
               splashColor: Colors.transparent,
-              child: textTheme("CONTACT"),
+              child: textTheme("CONTACT", currentIndex, 4),
             ),
           ],
         ),
       ),
       body: Container(
-          padding: EdgeInsets.only(top: 60),
-          decoration: new BoxDecoration(
-              gradient: new LinearGradient(
-            begin: Alignment(0, 1),
-            end: Alignment(0, 0),
+          padding: const EdgeInsets.only(top: 60),
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+            begin: const Alignment(0, 1),
+            end: const Alignment(0, 0),
             colors: [
-              Color(0xffD9D9D9).withOpacity(0.10),
-              Color(0xffD9D9D9).withOpacity(0),
+              const Color(0xffD9D9D9).withOpacity(0.15),
+              const Color(0xffD9D9D9).withOpacity(0),
             ],
           )),
-          child: _children[_currentIndex]),
+          child: _children[currentIndex]),
     );
   }
 
-  Widget textTheme(String title) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
-      child: Text(
-        title,
-        style: const TextStyle(
-            fontFamily: 'DMsans',
-            fontWeight: FontWeight.w400,
-            fontSize: 14,
-            color: Colors.white60,
-            letterSpacing: 2),
+  Widget textTheme(String title, int index, int actualIndex) {
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(6),
+      child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10),
+        decoration: BoxDecoration(
+            color: index == actualIndex
+                ? PortfolioTheme.kPrimaryColor.withOpacity(0.6)
+                : Colors.transparent,
+            border: Border(
+              left: BorderSide(
+                color: index == actualIndex
+                    ? PortfolioTheme.kPrimaryColor
+                    : Colors.transparent,
+                width: 4.0,
+              ),
+              // bottom: BorderSide(
+              //   color: index == actualIndex
+              //       ? PortfolioTheme.kPrimaryColor.withOpacity(0.6)
+              //       : Colors.transparent,
+              //   width: 1.0,
+              // ),
+            )),
+        child: Text(
+          title,
+          style: const TextStyle(
+              fontFamily: 'DMsans',
+              fontWeight: FontWeight.w400,
+              fontSize: 14,
+              color: Colors.white60,
+              letterSpacing: 2),
+        ),
       ),
     );
   }

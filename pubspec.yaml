@@ -30,6 +30,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   # inner_shadow_widget: ^0.0.3
+  url_launcher: ^6.1.7
   flutter:
     sdk: flutter
 
@@ -76,23 +77,11 @@ flutter:
   fonts:
     - family: gotham
       fonts:
-        - asset: assets/Gotham-Black.otf
+        - asset: assets/Gotham/Gotham-Black.otf
           weight: 800
-        - asset: assets/GothamBold.ttf
+        - asset: assets/Gotham/GothamBold.ttf
           weight: 600
-        - asset: assets/GothamBook.ttf
-          weight: 500
-    - family: Myraid
-      fonts:
-        - asset: assets\Myraid\MYRIADPRO-BOLD.OTF
-          weight: 800
-        - asset: assets\Myraid\MYRIADPRO-COND.OTF
-          weight: 700
-        - asset: assets\Myraid\MYRIADPRO-SEMIBOLD.OTF
-          weight: 600
-        - asset: assets\Myraid\MyriadPro-Light.otf
-          weight: 400
-        - asset: assets\Myraid\MYRIADPRO-REGULAR.OTF
+        - asset: assets/Gotham/GothamBook.ttf
           weight: 500
     - family: DMmono
       fonts:
@@ -107,10 +96,15 @@ flutter:
       fonts:
         - asset: assets\DM_Sans\DMSans-Bold.ttf
           weight: 800
+        - asset: assets\DM_Sans\DMSans-BoldItalic.ttf
+          style: italic
         - asset: assets\DM_Sans\DMSans-Medium.ttf
           weight: 700
+        - asset: assets\DM_Sans\DMSans-MediumItalic.ttf
+          style: italic
         - asset: assets\DM_Sans\DMSans-Regular.ttf
           weight: 600
-
+        - asset: assets\DM_Sans\DMSans-Italic.ttf
+          style: italic
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

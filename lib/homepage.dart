@@ -1,10 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:portfolio/home.dart';
+import 'package:portfolio/resume.dart';
 
-class LandingPage extends StatelessWidget {
-  const LandingPage({super.key});
+class LandingPage extends StatefulWidget {
+  final Function(int) onTap;
+  const LandingPage({
+    super.key,
+    required this.onTap,
+  });
 
+  @override
+  State<LandingPage> createState() => _LandingPageState();
+}
+
+class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -68,7 +79,13 @@ class LandingPage extends StatelessWidget {
                   ),
                   const SizedBox(height: 60),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        // currentIndex = ValueNotifier<int>(3);
+                        currentIndex = 3;
+                      });
+                      widget.onTap(currentIndex);
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor:
                           Theme.of(context).primaryColor.withOpacity(0.7),

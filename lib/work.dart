@@ -25,7 +25,7 @@ class Work extends StatelessWidget {
           ),
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             workCard(
                 context,
@@ -33,6 +33,7 @@ class Work extends StatelessWidget {
                 "Get personalized academic performance, college updates and much more related to SVIT, Vasad.",
                 ["Flutter", "Dart", "Figma", "VScode"],
                 "assets/svit.png"),
+            const SizedBox(width: 20),
             workCard(
               context,
               "Library Management System",
@@ -42,9 +43,9 @@ class Work extends StatelessWidget {
             )
           ],
         ),
-        const SizedBox(height: 30),
+        const SizedBox(height: 20),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             workCard(
                 context,
@@ -52,6 +53,7 @@ class Work extends StatelessWidget {
                 "Characterizing each customer into a particular segment using the RFM model.",
                 ["Python", "Scikit-learn", "Jupyter-Notebook"],
                 "assets/customer.png"),
+            const SizedBox(width: 20),
             workCard(
               context,
               "Retail Market Analysis",
