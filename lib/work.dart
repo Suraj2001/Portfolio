@@ -1,12 +1,17 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:motion/motion.dart';
 import 'package:portfolio/innerShadow.dart';
+import 'package:portfolio/portfolioTheme.dart';
 
-class Work extends StatelessWidget {
+class Work extends StatefulWidget {
   const Work({super.key});
+
+  @override
+  State<Work> createState() => _WorkState();
+}
+
+class _WorkState extends State<Work> {
+  bool hover = false;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +22,7 @@ class Work extends StatelessWidget {
           child: Text(
             "All Works",
             style: TextStyle(
-                color: Theme.of(context).primaryColor.withOpacity(0.15),
+                color: PortfolioTheme.kPrimaryColor.withOpacity(0.15),
                 fontFamily: "DMsans",
                 letterSpacing: 5.5,
                 fontWeight: FontWeight.w700,
@@ -40,7 +45,7 @@ class Work extends StatelessWidget {
               "Library Management System ensures easy interaction and management of the library.",
               ["PHP", "SQL", "Figma", "VScode"],
               "assets/lms.png",
-            )
+            ),
           ],
         ),
         const SizedBox(height: 20),

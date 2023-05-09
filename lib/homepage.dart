@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:portfolio/home.dart';
+import 'package:portfolio/portfolioTheme.dart';
 import 'package:portfolio/resume.dart';
 
 class LandingPage extends StatefulWidget {
@@ -58,12 +59,12 @@ class _LandingPageState extends State<LandingPage> {
                     ],
                   ),
                   const SizedBox(height: 30),
-                  Text(
+                  const Text(
                     "Graduate Student at CSULB and working upon front-end skills.",
                     style: TextStyle(
                         fontSize: 38,
                         fontFamily: 'DMsans',
-                        color: Theme.of(context).primaryColor,
+                        color: PortfolioTheme.kPrimaryColor,
                         fontWeight: FontWeight.w600),
                   ),
                   const SizedBox(height: 30),
@@ -88,7 +89,7 @@ class _LandingPageState extends State<LandingPage> {
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor:
-                          Theme.of(context).primaryColor.withOpacity(0.7),
+                          PortfolioTheme.kPrimaryColor.withOpacity(0.7),
                       padding: const EdgeInsets.fromLTRB(20, 16, 20, 16),
                       textStyle: const TextStyle(
                           fontFamily: 'DMsans',

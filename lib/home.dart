@@ -59,7 +59,7 @@ class _HomeState extends State<Home> {
                 });
               },
               borderRadius: BorderRadius.circular(6),
-              hoverColor: Theme.of(context).primaryColor.withOpacity(0.5),
+              hoverColor: PortfolioTheme.kPrimaryColor.withOpacity(0.5),
               splashColor: Colors.transparent,
               child: textTheme("WORK", currentIndex, 0),
             ),
@@ -71,7 +71,7 @@ class _HomeState extends State<Home> {
                 });
               },
               borderRadius: BorderRadius.circular(6),
-              hoverColor: Theme.of(context).primaryColor.withOpacity(0.5),
+              hoverColor: PortfolioTheme.kPrimaryColor.withOpacity(0.5),
               splashColor: Colors.transparent,
               child: textTheme("ABOUT", currentIndex, 1),
             ),
@@ -93,7 +93,7 @@ class _HomeState extends State<Home> {
                 });
               },
               borderRadius: BorderRadius.circular(6),
-              hoverColor: Theme.of(context).primaryColor.withOpacity(0.5),
+              hoverColor: PortfolioTheme.kPrimaryColor.withOpacity(0.5),
               splashColor: Colors.transparent,
               child: textTheme("RESUME", currentIndex, 3),
             ),
@@ -105,7 +105,7 @@ class _HomeState extends State<Home> {
                 });
               },
               borderRadius: BorderRadius.circular(6),
-              hoverColor: Theme.of(context).primaryColor.withOpacity(0.5),
+              hoverColor: PortfolioTheme.kPrimaryColor.withOpacity(0.5),
               splashColor: Colors.transparent,
               child: textTheme("CONTACT", currentIndex, 4),
             ),

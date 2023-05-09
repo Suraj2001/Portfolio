@@ -13,7 +13,7 @@ class About extends StatelessWidget {
           child: Text(
             "About Me",
             style: TextStyle(
-                color: Theme.of(context).primaryColor.withOpacity(0.15),
+                color: PortfolioTheme.kPrimaryColor.withOpacity(0.15),
                 fontFamily: "DMsans",
                 letterSpacing: 5.5,
                 fontWeight: FontWeight.w700,
