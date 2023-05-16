@@ -1,12 +1,17 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:motion/motion.dart';
 import 'package:portfolio/innerShadow.dart';
+import 'package:portfolio/portfolioTheme.dart';
 
-class Work extends StatelessWidget {
+class Work extends StatefulWidget {
   const Work({super.key});
+
+  @override
+  State<Work> createState() => _WorkState();
+}
+
+class _WorkState extends State<Work> {
+  bool hover = false;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +22,7 @@ class Work extends StatelessWidget {
           child: Text(
             "All Works",
             style: TextStyle(
-                color: Theme.of(context).primaryColor.withOpacity(0.15),
+                color: PortfolioTheme.kPrimaryColor.withOpacity(0.15),
                 fontFamily: "DMsans",
                 letterSpacing: 5.5,
                 fontWeight: FontWeight.w700,
@@ -25,7 +30,7 @@ class Work extends StatelessWidget {
           ),
         ),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             workCard(
                 context,
@@ -33,18 +38,19 @@ class Work extends StatelessWidget {
                 "Get personalized academic performance, college updates and much more related to SVIT, Vasad.",
                 ["Flutter", "Dart", "Figma", "VScode"],
                 "assets/svit.png"),
+            const SizedBox(width: 20),
             workCard(
               context,
               "Library Management System",
               "Library Management System ensures easy interaction and management of the library.",
               ["PHP", "SQL", "Figma", "VScode"],
               "assets/lms.png",
-            )
+            ),
           ],
         ),
-        const SizedBox(height: 30),
+        const SizedBox(height: 20),
         Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             workCard(
                 context,
@@ -52,6 +58,7 @@ class Work extends StatelessWidget {
                 "Characterizing each customer into a particular segment using the RFM model.",
                 ["Python", "Scikit-learn", "Jupyter-Notebook"],
                 "assets/customer.png"),
+            const SizedBox(width: 20),
             workCard(
               context,
               "Retail Market Analysis",
