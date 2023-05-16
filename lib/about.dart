@@ -87,7 +87,7 @@ class About extends StatelessWidget {
                   ),
                   Text(
                     "Coming from a computer science background and having participated as a volunteer to team lead in significant events, forming a dynamic combination of both nontechnical and technical experiences, along with accomplishing substantial projects during my undergrad, gives me the confidence that I would be an excellent fit to any situation.",
-                    style: PortfolioTheme.subHeading,
+                    style: PortfolioTheme.subHeading.copyWith(fontSize: 14),
                     textAlign: TextAlign.justify,
                   )
                 ],

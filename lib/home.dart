@@ -42,11 +42,11 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: const Color(0xff212224),
       extendBodyBehindAppBar: true,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.black,
+        backgroundColor: Color(0xff212224),
         toolbarHeight: 100,
         elevation: 0,
         title: Row(
@@ -114,15 +114,15 @@ class _HomeState extends State<Home> {
       ),
       body: Container(
           padding: const EdgeInsets.only(top: 60),
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-            begin: const Alignment(0, 1),
-            end: const Alignment(0, 0),
-            colors: [
-              const Color(0xffD9D9D9).withOpacity(0.15),
-              const Color(0xffD9D9D9).withOpacity(0),
-            ],
-          )),
+          // decoration: BoxDecoration(
+          //     gradient: LinearGradient(
+          //   begin: const Alignment(0, 1),
+          //   end: const Alignment(0, 0),
+          //   colors: [
+          //     const Color(0xffD9D9D9).withOpacity(0.15),
+          //     const Color(0xffD9D9D9).withOpacity(0),
+          //   ],
+          // )),
           child: _children[currentIndex]),
     );
   }
